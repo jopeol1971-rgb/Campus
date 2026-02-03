@@ -1,8 +1,5 @@
 from flask import Flask, render_template, request   
-<<<<<<< HEAD
 from psycopg2 import connect
-=======
->>>>>>> origin/main
 
 app = Flask(__name__)
 
@@ -23,7 +20,6 @@ def login():
         usuario = request.form["user"]
         password = request.form["password"]
         email = request.form["email"]
-<<<<<<< HEAD
         
         conn = conectarCampus()
         cursor = conn.cursor() 
@@ -34,13 +30,6 @@ def login():
     
         
         return render_template("user.html", usuario=usuario, email=email)
-=======
-        color = request.form["color"]
-
-        print("Usuario ingresado:", usuario)
-        print("Contraseña ingresada:", password)
-        return render_template("user.html", usuario=usuario, email=email, color=color)
->>>>>>> origin/main
     
     return render_template("login.html")
 
