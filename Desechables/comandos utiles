@@ -6,3 +6,7 @@ flask --app hola run (ejecutar aplicacion, hola es el nombre de la app)
 
 cls => Limpiar terminal
 
+pip install python-dotenv (instalar python-dotenv)
+
+
+
