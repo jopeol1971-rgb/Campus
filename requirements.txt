@@ -14,3 +14,5 @@ python-dotenv==1.0.0
 # Proporciona funciones de seguridad como hash de contraseñas (generate_password_hash, check_password_hash)
 Werkzeug==3.0.1
 
+#Dependencia para despliegue de railway
+gunicorn>=20.0.4
