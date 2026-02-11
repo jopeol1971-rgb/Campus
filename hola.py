@@ -89,6 +89,15 @@ def registro():
         try:
             conn = conectarCampus()
             cursor = conn.cursor()
+            
+            # Comprobar si el usuario ya está registrado
+            cursor.execute("SELECT 1 FROM usuarios WHERE usuario = %s", (usuario,))
+            usuario_existe = cursor.fetchone()
+            if usuario_existe:
+                cursor.close()
+                conn.close()
+                return render_template("registro.html", error="El nombre de usuario ya está en uso")
+            
             # Comprobar si el email ya está registrado
             cursor.execute("SELECT 1 FROM usuarios WHERE usuario_email = %s", (email,))
             existe = cursor.fetchone()
